@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0a0a0f" />
+<title>NexoraTech — Build. Automate. Scale.</title>
+<meta name="description" content="NexoraTech helps businesses grow with AI-powered websites, UI/UX, and automation. Premium digital experiences that drive real growth." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="style.css" />
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+<!-- React mount point - hidden, unused -->
+<div id="root" style="display:none"></div>
+
+<!-- Background layers -->
+<div class="bg-layer">
+  <div class="bg-grid"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+  <div class="bg-noise"></div>
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar" data-testid="main-navbar">
+  <div class="container nav-inner">
+    <a href="#/" class="logo" data-testid="logo-link">
+      <span class="logo-mark"><i class="fa-solid fa-bolt"></i></span>
+      <span class="logo-text">Nexora<span class="accent">Tech</span></span>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#/" data-route="/" data-testid="nav-home">Home</a>
+      <a href="#/services" data-route="/services" data-testid="nav-services">Services</a>
+      <a href="#/projects" data-route="/projects" data-testid="nav-projects">Projects</a>
+      <a href="#/about" data-route="/about" data-testid="nav-about">About</a>
+      <a href="#/contact" data-route="/contact" data-testid="nav-contact">Contact</a>
+    </nav>
+    <a href="#/contact" class="btn btn-primary nav-cta" data-testid="nav-cta-button">
+      Get Started <i class="fa-solid fa-arrow-right"></i>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" data-testid="menu-toggle">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<main id="app">
+
+<!-- ============================================= -->
+<!-- HOME PAGE -->
+<!-- ============================================= -->
+<section class="page" data-page="/" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-badge reveal" data-testid="hero-badge">
+        <span class="pulse-dot"></span>
+        Limited slots available this month
+      </div>
+      <h1 class="hero-title reveal" data-testid="hero-title">
+        Build. <span class="grad-text">Automate.</span> Scale.
+      </h1>
+      <p class="hero-sub reveal" data-testid="hero-subtitle">
+        We create AI-powered digital experiences that drive real business growth.
+        Websites, UI/UX, and automation — engineered for conversion.
+      </p>
+      <div class="hero-ctas reveal">
+        <a href="#/contact" class="btn btn-primary btn-lg" data-testid="hero-consultation-btn">
+          Get Free Consultation <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#/projects" class="btn btn-ghost btn-lg" data-testid="hero-projects-btn">
+          View Projects
+        </a>
+      </div>
+      <div class="hero-trust reveal">
+        <div class="avatars">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="hero-trust-text">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <span>Trusted by founders & growing teams</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal" data-testid="stat-websites">
+          <div class="stat-num" data-count="4">0</div>
+          <div class="stat-plus">+</div>
+          <div class="stat-label">Websites Delivered</div>
+        </div>
+        <div class="stat-card reveal" data-testid="stat-uiux">
+          <div class="stat-num" data-count="10">0</div>
+          <div class="stat-plus">+</div>
+          <div class="stat-label">UI/UX Projects</div>
+        </div>
+        <div class="stat-card reveal" data-testid="stat-automations">
+          <div class="stat-num" data-count="5">0</div>
+          <div class="stat-plus">+</div>
+          <div class="stat-label">AI Automation Systems</div>
+        </div>
+        <div class="stat-card reveal" data-testid="stat-clients">
+          <div class="stat-num" data-count="12">0</div>
+          <div class="stat-plus">+</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">What we do</span>
+        <h2 class="section-title">Services that turn ideas into <span class="grad-text">growth engines</span></h2>
+        <p class="section-sub">From pixel-perfect websites to autonomous AI workflows — built end-to-end.</p>
+      </div>
+      <div class="cards-grid">
+        <article class="glass-card service-card reveal" data-testid="service-card-web">
+          <div class="card-icon icon-purple"><i class="fa-solid fa-code"></i></div>
+          <h3>Website Development</h3>
+          <p>High-performance websites engineered to convert visitors into customers. Lightning fast, SEO-ready, and beautifully crafted.</p>
+          <a href="#/services" class="card-cta">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+        <article class="glass-card service-card reveal" data-testid="service-card-uiux">
+          <div class="card-icon icon-blue"><i class="fa-solid fa-pen-ruler"></i></div>
+          <h3>UI/UX Design</h3>
+          <p>Apple-grade interfaces with conversion psychology baked in. Designs that feel premium and drive action.</p>
+          <a href="#/services" class="card-cta">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+        <article class="glass-card service-card reveal" data-testid="service-card-ai">
+          <div class="card-icon icon-cyan"><i class="fa-solid fa-robot"></i></div>
+          <h3>AI Automation</h3>
+          <p>Custom AI chatbots, workflow automation, and intelligent systems that work 24/7 — so your team doesn't have to.</p>
+          <a href="#/services" class="card-cta">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Smart pricing</span>
+        <h2 class="section-title">Plans built for <span class="grad-text">every stage</span> of growth</h2>
+        <p class="section-sub">Transparent starting points. Final price is tailored to your scope.</p>
+      </div>
+      <div class="pricing-grid">
+        <article class="glass-card pricing-card reveal" data-testid="pricing-starter">
+          <div class="plan-name">Starter</div>
+          <div class="plan-price"><span class="currency">₹</span>15,000<span class="plan-from">starting from</span></div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-check"></i> Basic business website</li>
+            <li><i class="fa-solid fa-check"></i> 4–5 responsive pages</li>
+            <li><i class="fa-solid fa-check"></i> Mobile-first design</li>
+            <li><i class="fa-solid fa-check"></i> Contact form integration</li>
+          </ul>
+          <a href="#/contact" class="btn btn-ghost btn-block" data-testid="pricing-starter-cta">Choose Starter</a>
+        </article>
+
+        <article class="glass-card pricing-card popular reveal" data-testid="pricing-growth">
+          <div class="popular-tag">Most Popular</div>
+          <div class="plan-name">Growth</div>
+          <div class="plan-price"><span class="currency">₹</span>30,000<span class="plan-from">starting from</span></div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-check"></i> Website + UI/UX design</li>
+            <li><i class="fa-solid fa-check"></i> SEO basics included</li>
+            <li><i class="fa-solid fa-check"></i> Conversion-focused design</li>
+            <li><i class="fa-solid fa-check"></i> Analytics setup</li>
+          </ul>
+          <a href="#/contact" class="btn btn-primary btn-block" data-testid="pricing-growth-cta">Choose Growth</a>
+        </article>
+
+        <article class="glass-card pricing-card reveal" data-testid="pricing-premium">
+          <div class="plan-name">Premium</div>
+          <div class="plan-price"><span class="currency">₹</span>50,000<span class="plus">+</span><span class="plan-from">starting from</span></div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-check"></i> Website + AI automation</li>
+            <li><i class="fa-solid fa-check"></i> Chatbot / automation system</li>
+            <li><i class="fa-solid fa-check"></i> High-performance UI</li>
+            <li><i class="fa-solid fa-check"></i> Priority support</li>
+          </ul>
+          <a href="#/contact" class="btn btn-ghost btn-block" data-testid="pricing-premium-cta">Choose Premium</a>
+        </article>
+      </div>
+      <p class="pricing-note reveal">
+        <i class="fa-solid fa-circle-info"></i> Pricing varies based on project complexity.
+        <a href="#/contact" class="link-accent" data-testid="custom-quote-link">Get a custom quote →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section why-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why NexoraTech</span>
+        <h2 class="section-title">Not just designers. <span class="grad-text">Growth partners.</span></h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal" data-testid="why-fast">
+          <div class="why-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+          <h3>Fast Delivery</h3>
+          <p>Most projects ship in 2–4 weeks. We respect your timeline as much as you do.</p>
+        </div>
+        <div class="why-card reveal" data-testid="why-ai">
+          <div class="why-icon"><i class="fa-solid fa-microchip"></i></div>
+          <h3>AI-Powered Solutions</h3>
+          <p>We embed intelligence into your product — chatbots, automation, smart workflows.</p>
+        </div>
+        <div class="why-card reveal" data-testid="why-business">
+          <div class="why-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3>Business-Focused</h3>
+          <p>Every pixel, every line of code engineered for ROI — not just aesthetics.</p>
+        </div>
+        <div class="why-card reveal" data-testid="why-premium">
+          <div class="why-icon"><i class="fa-solid fa-gem"></i></div>
+          <h3>Premium UI/UX</h3>
+          <p>Stripe-grade polish. Apple-grade attention to detail. Built to impress.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Wall of love</span>
+        <h2 class="section-title">What our clients <span class="grad-text">say</span></h2>
+      </div>
+      <div class="testimonials-grid">
+        <article class="glass-card testimonial reveal" data-testid="testimonial-1">
+          <div class="quote-mark">"</div>
+          <p>NexoraTech rebuilt our landing page and conversions jumped 38% in the first month. The team gets business, not just design.</p>
+          <div class="t-author">
+            <div class="t-avatar t-grad-1">RM</div>
+            <div>
+              <div class="t-name">Riya Mehta</div>
+              <div class="t-role">Founder, Lumen Studio</div>
+            </div>
+          </div>
+        </article>
+        <article class="glass-card testimonial reveal" data-testid="testimonial-2">
+          <div class="quote-mark">"</div>
+          <p>Their AI chatbot handles 70% of our support tickets now. Honestly the best ROI we've had on any tool.</p>
+          <div class="t-author">
+            <div class="t-avatar t-grad-2">AK</div>
+            <div>
+              <div class="t-name">Arjun Kapoor</div>
+              <div class="t-role">CEO, NimbusCart</div>
+            </div>
+          </div>
+        </article>
+        <article class="glass-card testimonial reveal" data-testid="testimonial-3">
+          <div class="quote-mark">"</div>
+          <p>From figma to deploy in 18 days. The UI feels like Stripe. Our investors literally asked us who built it.</p>
+          <div class="t-author">
+            <div class="t-avatar t-grad-3">SP</div>
+            <div>
+              <div class="t-name">Sneha Pillai</div>
+              <div class="t-role">CPO, FinForge</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-strip reveal" data-testid="cta-strip">
+        <div>
+          <h3>Ready to build something <span class="grad-text">remarkable</span>?</h3>
+          <p>Get a free 30-minute strategy call. No pitch, just clarity.</p>
+        </div>
+        <a href="#/contact" class="btn btn-primary btn-lg" data-testid="cta-strip-button">
+          Book Free Consultation <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+<!-- ============================================= -->
+<!-- SERVICES PAGE -->
+<!-- ============================================= -->
+<section class="page" data-page="/services" id="page-services">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow reveal">Services</span>
+      <h1 class="page-title reveal">Solutions engineered to <span class="grad-text">scale your business</span></h1>
+      <p class="page-sub reveal">Three core pillars. Endless possibilities. Each one designed to move metrics that matter.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="services-detailed">
+
+        <article class="glass-card service-detail reveal" data-testid="service-detail-web">
+          <div class="service-detail-icon icon-purple"><i class="fa-solid fa-code"></i></div>
+          <h2>Website Development</h2>
+          <p class="service-lead">High-performance websites built with modern stacks — engineered to load fast, rank well, and convert visitors.</p>
+          <ul class="check-list">
+            <li><i class="fa-solid fa-check"></i> Custom responsive design</li>
+            <li><i class="fa-solid fa-check"></i> SEO-optimized architecture</li>
+            <li><i class="fa-solid fa-check"></i> Lightning-fast performance (90+ Lighthouse)</li>
+            <li><i class="fa-solid fa-check"></i> CMS integration (optional)</li>
+            <li><i class="fa-solid fa-check"></i> Analytics & conversion tracking</li>
+          </ul>
+          <a href="#/contact" class="btn btn-primary">Start a Project <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+
+        <article class="glass-card service-detail reveal" data-testid="service-detail-uiux">
+          <div class="service-detail-icon icon-blue"><i class="fa-solid fa-pen-ruler"></i></div>
+          <h2>UI/UX Design</h2>
+          <p class="service-lead">Interfaces that feel premium and convert. We blend conversion psychology with world-class craft.</p>
+          <ul class="check-list">
+            <li><i class="fa-solid fa-check"></i> User research & wireframing</li>
+            <li><i class="fa-solid fa-check"></i> High-fidelity Figma designs</li>
+            <li><i class="fa-solid fa-check"></i> Interactive prototypes</li>
+            <li><i class="fa-solid fa-check"></i> Design systems & component libraries</li>
+            <li><i class="fa-solid fa-check"></i> Usability testing</li>
+          </ul>
+          <a href="#/contact" class="btn btn-primary">Start a Project <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+
+        <article class="glass-card service-detail reveal" data-testid="service-detail-ai">
+          <div class="service-detail-icon icon-cyan"><i class="fa-solid fa-robot"></i></div>
+          <h2>AI Automation</h2>
+          <p class="service-lead">Put your business on autopilot with AI chatbots, smart workflows, and intelligent automations.</p>
+          <ul class="check-list">
+            <li><i class="fa-solid fa-check"></i> Custom GPT chatbots</li>
+            <li><i class="fa-solid fa-check"></i> Lead capture & qualification automation</li>
+            <li><i class="fa-solid fa-check"></i> Email & CRM workflow automation</li>
+            <li><i class="fa-solid fa-check"></i> Data pipelines & integrations</li>
+            <li><i class="fa-solid fa-check"></i> 24/7 intelligent support agents</li>
+          </ul>
+          <a href="#/contact" class="btn btn-primary">Start a Project <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============================================= -->
+<!-- PROJECTS PAGE -->
+<!-- ============================================= -->
+<section class="page" data-page="/projects" id="page-projects">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow reveal">Our Work</span>
+      <h1 class="page-title reveal">Projects that <span class="grad-text">moved the needle</span></h1>
+      <p class="page-sub reveal">A glimpse of recent work — websites, design systems, and AI automations.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="projects-grid" id="projects-grid" data-testid="projects-grid">
+        <!-- JS-rendered -->
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============================================= -->
+<!-- PROJECT DETAILS PAGE -->
+<!-- ============================================= -->
+<section class="page" data-page="/project" id="page-project-details">
+  <div class="container" id="project-details-content" data-testid="project-details-content">
+    <!-- JS-rendered -->
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- ABOUT PAGE -->
+<!-- ============================================= -->
+<section class="page" data-page="/about" id="page-about">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow reveal">About NexoraTech</span>
+      <h1 class="page-title reveal">We build the <span class="grad-text">future of digital</span></h1>
+      <p class="page-sub reveal">A new-age studio at the intersection of design, code, and artificial intelligence.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="mission-vision">
+        <div class="glass-card mv-card reveal" data-testid="mission-card">
+          <div class="mv-icon"><i class="fa-solid fa-bullseye"></i></div>
+          <h2>Our Mission</h2>
+          <p>To help businesses grow with technology — by crafting digital experiences that are fast, intelligent, and beautifully designed.</p>
+        </div>
+        <div class="glass-card mv-card reveal" data-testid="vision-card">
+          <div class="mv-icon"><i class="fa-solid fa-eye"></i></div>
+          <h2>Our Vision</h2>
+          <p>To become the next-gen AI digital company — where every project we ship sets a new standard for what's possible online.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="founder-section">
+        <div class="founder-photo reveal" data-testid="founder-photo">
+          <div class="founder-avatar">
+            <i class="fa-solid fa-user-astronaut"></i>
+          </div>
+          <div class="founder-glow"></div>
+        </div>
+        <div class="founder-content reveal">
+          <span class="eyebrow">Meet the founder</span>
+          <h2>Building NexoraTech, one bold idea at a time</h2>
+          <p>Hi, I'm the founder of NexoraTech — a designer, developer, and AI enthusiast obsessed with shipping work that actually moves business metrics. Over the years I've worked with startups, agencies, and founders across India and beyond, turning rough ideas into polished products.</p>
+          <p>NexoraTech was born from a simple belief: <em>most websites are stuck in 2015</em>. We're here to change that — with premium design, AI-native features, and a relentless focus on results.</p>
+          <div class="founder-socials">
+            <a href="https://wa.me/918310762179" class="social-pill" target="_blank" rel="noopener" data-testid="founder-whatsapp">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="mailto:nexoratechx.007@gmail.com" class="social-pill" data-testid="founder-email">
+              <i class="fa-solid fa-envelope"></i> Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Our Journey</span>
+        <h2 class="section-title">From <span class="grad-text">vision to velocity</span></h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal" data-testid="timeline-1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2023</div>
+          <h3>The Spark</h3>
+          <p>Founded with a mission to bring premium-tier design to growing businesses.</p>
+        </div>
+        <div class="timeline-item reveal" data-testid="timeline-2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2024</div>
+          <h3>First Clients</h3>
+          <p>Shipped 4+ websites and 10+ UI/UX projects across India and abroad.</p>
+        </div>
+        <div class="timeline-item reveal" data-testid="timeline-3">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2025</div>
+          <h3>AI-Native Pivot</h3>
+          <p>Launched our AI automation arm — chatbots, agents, and workflow systems.</p>
+        </div>
+        <div class="timeline-item reveal" data-testid="timeline-4">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2026</div>
+          <h3>Next Horizon</h3>
+          <p>Building India's premier AI-first digital studio — and we're just getting started.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============================================= -->
+<!-- CONTACT PAGE -->
+<!-- ============================================= -->
+<section class="page" data-page="/contact" id="page-contact">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow reveal">Get in touch</span>
+      <h1 class="page-title reveal">Let's build something <span class="grad-text">remarkable</span></h1>
+      <p class="page-sub reveal">Tell us about your project. We'll respond within 24 hours.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-info reveal">
+          <div class="glass-card info-card">
+            <h3>Contact info</h3>
+            <p class="info-lead">Prefer chat? Reach us directly — we usually reply within an hour during business hours.</p>
+
+            <a href="https://wa.me/918310762179?text=Hi%20NexoraTech%2C%20I'd%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="contact-method" data-testid="contact-whatsapp">
+              <div class="contact-icon whatsapp-icon"><i class="fa-brands fa-whatsapp"></i></div>
+              <div>
+                <div class="contact-label">WhatsApp</div>
+                <div class="contact-value">+91 83107 62179</div>
+              </div>
+              <i class="fa-solid fa-arrow-right contact-arrow"></i>
+            </a>
+
+            <a href="mailto:nexoratechx.007@gmail.com?subject=Project%20Inquiry" class="contact-method" data-testid="contact-email">
+              <div class="contact-icon email-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <div class="contact-label">Email</div>
+                <div class="contact-value">nexoratechx.007@gmail.com</div>
+              </div>
+              <i class="fa-solid fa-arrow-right contact-arrow"></i>
+            </a>
+
+            <div class="urgency-note">
+              <i class="fa-solid fa-fire"></i> Limited slots available this month
+            </div>
+          </div>
+        </div>
+
+        <form class="glass-card contact-form reveal" id="contact-form" data-testid="contact-form" novalidate>
+          <h3>Send us a message</h3>
+          <div class="form-row">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Your name" data-testid="contact-name-input" />
+            <span class="error-msg" id="err-name"></span>
+          </div>
+          <div class="form-row">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" placeholder="you@example.com" data-testid="contact-email-input" />
+            <span class="error-msg" id="err-email"></span>
+          </div>
+          <div class="form-row">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="5" placeholder="Tell us about your project..." data-testid="contact-message-input"></textarea>
+            <span class="error-msg" id="err-message"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg" id="cf-submit" data-testid="contact-submit-button">
+            <span class="btn-label">Send Message <i class="fa-solid fa-paper-plane"></i></span>
+            <span class="btn-loader"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
+          </button>
+          <div class="form-status" id="form-status" data-testid="contact-status"></div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="#/" class="logo">
+        <span class="logo-mark"><i class="fa-solid fa-bolt"></i></span>
+        <span class="logo-text">Nexora<span class="accent">Tech</span></span>
+      </a>
+      <p>AI-powered websites, UI/UX & automation. Built for growth.</p>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h4>Company</h4>
+        <a href="#/about">About</a>
+        <a href="#/projects">Projects</a>
+        <a href="#/services">Services</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="https://wa.me/918310762179" target="_blank" rel="noopener" data-testid="footer-whatsapp">WhatsApp</a>
+        <a href="mailto:nexoratechx.007@gmail.com" data-testid="footer-email">Email</a>
+      </div>
+      <div>
+        <h4>Get started</h4>
+        <a href="#/contact">Free consultation</a>
+        <a href="#/contact">Custom quote</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <span>© <span id="year"></span> NexoraTech. All rights reserved.</span>
+      <span class="footer-tag">Crafted with <i class="fa-solid fa-heart"></i> in India</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING CONTACT -->
+<div class="float-stack">
+  <a href="https://wa.me/918310762179?text=Hi%20NexoraTech!" target="_blank" rel="noopener" class="float-btn float-wa" aria-label="WhatsApp" data-testid="floating-whatsapp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <a href="#/contact" class="float-btn float-contact" data-testid="floating-contact">
+    <i class="fa-solid fa-comment-dots"></i>
+    <span>Contact Us</span>
+  </a>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast" data-testid="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
